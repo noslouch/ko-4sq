@@ -1,0 +1,8 @@
+body { padding-top: 2em; }
+.loading {
+    background-image: url('../img/loader.gif');
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    opacity: 0; }
+.begin { opacity: 1;}
