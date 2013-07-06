@@ -1,3 +1,4 @@
+
 function Venue(name, tips, phrasesArray){
     self.name = name
     self.tips = tips
@@ -10,12 +11,12 @@ function Venue(name, tips, phrasesArray){
     } catch (e) { console.log(self.name + ' doesn\'t have any phrases') }
 }
 
-function VenueViewModel(){
+function VenueViewModel(secret){
     var self = this
     self.venueList = ko.observableArray()
     self.location = ko.observable()
     self.url = 'https://api.foursquare.com/v2/venues/explore'
-    self.secret = 'MWLQZUTQT3TKORJELDYA0CSVJPVR5I21IGAVOE5O424XP3EJ'
+    self.secret = secret
     self.id = '0BHZAIIOAXUE54TFXJX2HHDG0WZV0H1WRTVBZUQLDSLU3MDX'
     self.geoReady = ko.observable(false)
     self.loading = ko.observable(true)
@@ -62,4 +63,4 @@ function VenueViewModel(){
     self.init()
 }
 
-ko.applyBindings(new VenueViewModel())
+ko.applyBindings(new VenueViewModel(secret))
